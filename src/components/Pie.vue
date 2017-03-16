@@ -11,7 +11,7 @@
     <br>
     <button type="submit" /* v-on:click="enter()" */>Submit</button>
     <br>
-    <p v-if="peopleSelection && pieSelection">{{peopleSelection }} has selected the {{ pieSelection }}.</p>
+    <p v-if="peopleSelection && pieSelection">{{ peopleSelection }} has selected the {{ pieSelection }}.</p>
     <p>{{ totalSelection }}</p>
   </div>
 </template>
@@ -33,11 +33,5 @@ export default {
       msg: 'Pie Selector',
     };
   },
-  // methods() {
-  //   enter: function () {
-  //     this.totalSelection = this.peopleSelection + this.pieSelection;
-  //     return this.totalSelection;
-  //   },
-  // }
 };
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div id="landing">
-    <h1>{{ privateState.msg }}</h1>
+    <h1>{{ msg }}</h1>
     <select v-model="peopleSelection">
-      <option :value="person.name" v-for="person in privateState.peopleSelection">{{ person.name }}</option>
+      <option :value="person.name" v-for="person in peopleSelection">{{ person.name }}</option>
     </select>
     <br>
     <br>
@@ -17,17 +17,12 @@ export default {
   name: 'landing',
   data() {
     return {
-      privateState: {
-        peopleSelection: [
-          { name: 'Steph' },
-          { name: 'Alex' },
-        ],
-        msg: 'Pie Selector',
-      },
-      sharedState: {
-        store: '',
-      },
-    };
+      peopleSelection: [
+        { name: 'Steph' },
+        { name: 'Alex' },
+      ],
+      msg: 'Pie Selector',
+    },
   },
 };
 </script>
