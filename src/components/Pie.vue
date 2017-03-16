@@ -5,8 +5,8 @@
     <label for="pieType">Pie Type</label>
     <br>
     <div v-for="pie in pies">
-    <input type="radio" :value="pie.name" name="pies" v-model="pieSelection">
-    <label for="pies">{{ pie.name }}</label>
+      <input type="radio" :value="pie.name" name="pies" v-model="pieSelection">
+      <label for="pies">{{ pie.name }}</label>
     </div>
     <br>
     <button type="submit" /* v-on:click="enter()" */>Submit</button>
