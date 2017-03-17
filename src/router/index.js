@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Pie from '@/components/Pie';
 import Landing from '@/components/Landing';
 import Selections from '@/components/Selections';
+import StickOrTwist from '@/components/StickOrTwist';
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/selections',
       name: 'Selections',
       component: Selections,
+    },
+    {
+      path: '/stickortwist',
+      name: 'StickOrTwist',
+      component: StickOrTwist,
     },
   ],
 });

@@ -42,7 +42,7 @@ export default {
       // into the public state
       this.sharedState.store.setPersonSelection(this.$data.privateState.selection);
       // now we are done we should redirect to the next step
-      this.$router.push('pie');
+      this.$router.push('stickortwist');
     },
     getSelectedUserPicture() {
       const person = this.$data.privateState.selection;
