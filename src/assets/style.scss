@@ -1,10 +1,31 @@
+body {
+  //background-image: url('~pie-bg.png');
+  background-color: linen;
+}
+
+#wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #app {
+  background-color: white;
+  border-radius: 25px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding: 2em;
+  @include centerer;
 }
 
 table, th, td {
@@ -16,4 +37,11 @@ table, th, td {
 
 img {
   height: 100px;
+}
+
+select,
+input,
+button {
+  padding: 0.8em;
+  font-size: 1em;
 }

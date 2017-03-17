@@ -1,6 +1,6 @@
 <template>
   <div id="landing">
-    <h1>Welcome to {{ privateState.msg }}. Can I take your name please?</h1>
+    <h1>Welcome to {{ privateState.msg }}.<br><br>Can I take your name please?</h1>
     <img v-if="privateState.selection" :src="getSelectedUserPicture()"><br><br>
     <select v-model="privateState.selection">
       <option :value="person.name" v-for="person in privateState.people">{{ person.name }}</option>
