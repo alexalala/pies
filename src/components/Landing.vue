@@ -4,8 +4,7 @@
     <select v-model="privateState.selection">
       <option :value="person.name" v-for="person in privateState.people">{{ person.name }}</option>
     </select>
-    <br>
-    <br>
+    <img v-if="privateState.selection" :src="'../assets/people/' + privateState.selection + '.jpg'">
     <button @click="onDone()">
       Next
     </button>
