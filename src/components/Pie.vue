@@ -34,6 +34,7 @@ export default {
           { name: 'The Bondi' },
           { name: 'The Greek' },
           { name: 'The Italian' },
+          { name: 'Special' },
         ],
         msg: 'Pie Selector',
         selection: false,
