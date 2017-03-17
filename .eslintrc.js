@@ -37,7 +37,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // allow console.log during development
     'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
-    // allow global require
+    // allow global require during development
     'global-require': process.env.NODE_ENV === 'production' ? 2 : 0,
+
   }
 }
