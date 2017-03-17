@@ -4,7 +4,7 @@
     <select v-model="privateState.selection">
       <option :value="person.name" v-for="person in privateState.people">{{ person.name }}</option>
     </select>
-    <img v-if="privateState.selection" :src="'../assets/people/' + privateState.selection + '.jpg'">
+    <img v-if="privateState.selection" :src="getUserPicture('alex')">
     <button @click="onDone()">
       Next
     </button>
@@ -13,6 +13,10 @@
 
 <script>
 import store from '../store';
+
+const peopleImages = {
+  alex: require('../assets/people/Alex.jpg'),
+};
 
 export default {
   name: 'landing',
@@ -38,6 +42,9 @@ export default {
       this.sharedState.store.setPersonSelection(this.$data.privateState.selection);
       // now we are done we should redirect to the next step
       this.$router.push('pie');
+    },
+    getUserPicture(person) {
+      return peopleImages[person] || peopleImages.default;
     },
   },
 };
