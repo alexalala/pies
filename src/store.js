@@ -2,7 +2,6 @@ const PERSON_DEFAULT_VALUE = false;
 const PIE_DEFAULT_VALUE = false;
 
 const store = {
-  debug: true,
   state: {
     person: PERSON_DEFAULT_VALUE,
     pie: PIE_DEFAULT_VALUE,
