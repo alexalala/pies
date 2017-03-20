@@ -8,7 +8,7 @@
         <td><label for="pies">{{ pie.name }}</label></td>
       </tr>
     </table>
-    <p v-show="privateState.selection"> Oh you fancy {{ privateState.selection }} do you {{ sharedState.store.state.person }}?</p>
+    <p v-show="privateState.selection">Oh you fancy {{ privateState.selection }} do you {{ sharedState.store.state.person }}?</p>
     <br>
     <button @click="onSubmit()">Submit</button>
   </div>
@@ -36,7 +36,6 @@ export default {
           { name: 'The Italian' },
           { name: 'Special' },
         ],
-        msg: 'Pie Selector',
         selection: false,
       },
       sharedState: {

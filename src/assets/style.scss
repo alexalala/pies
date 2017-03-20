@@ -39,9 +39,14 @@ img {
   height: 100px;
 }
 
-select,
-input,
-button {
-  padding: 0.8em;
+select {
+  width: 250px;
+  padding: 0.6em;
+  font-size: 1em;
+}
+
+button,
+input {
+  padding: 0.6em;
   font-size: 1em;
 }
