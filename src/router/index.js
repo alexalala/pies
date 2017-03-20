@@ -4,6 +4,7 @@ import Pie from '@/components/Pie';
 import Landing from '@/components/Landing';
 import Selections from '@/components/Selections';
 import StickOrTwist from '@/components/StickOrTwist';
+import PieMaster from '@/components/PieMaster';
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/stickortwist',
       name: 'StickOrTwist',
       component: StickOrTwist,
+    },
+    {
+      path: '/piemaster',
+      name: 'PieMaster',
+      component: PieMaster,
     },
   ],
 });

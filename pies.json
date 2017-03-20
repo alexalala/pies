@@ -1,0 +1,10 @@
+{
+	"movies": [
+		{ "title": "The Boy", "watched": false },
+		{ "title": "Avengers: Age of Ultron", "watched": true },
+		{ "title": "Avengers Assemble", "watched": true },
+		{ "title": "Scott Pilgrim", "watched": true },
+		{ "title": "Tron: Legacy", "watched": true },
+		{ "title": "The Hunger Games: Mockingjay Part 2", "watched": false }
+	]
+}
