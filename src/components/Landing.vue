@@ -1,8 +1,12 @@
 <template>
   <div id="landing">
-    <h1>Welcome to {{ privateState.msg }}.<br><br>Can I take your name please?</h1>
-    <img v-if="privateState.selection" :src="getSelectedUserPicture()"><br><br>
+    <h1>Welcome to the {{ privateState.msg }}!</h1>
+
     <p v-if="privateState.selection">Hello {{ privateState.selection }}! Your current choice of pie is <strong>{{ getCurrentPieSelection() }}</strong>!</p>
+    <p v-else>Can I take your name please?</p>
+
+    <img class="user" v-if="privateState.selection" :src="getSelectedUserPicture()"><br><br>
+
     <select v-model="privateState.selection">
       <option :value="person.name" v-for="person in privateState.people">{{ person.name }}</option>
     </select>
@@ -79,7 +83,7 @@ export default {
           { name: 'Steph' },
           { name: 'Toby' },
         ],
-        msg: 'Pie Selector',
+        msg: 'Neontribe Pie Selector',
         selection: false,
       },
       sharedState: {
