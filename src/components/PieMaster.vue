@@ -1,7 +1,6 @@
 <template>
 	<div>
-		<h1>Selections:</h1>
-		<h2>You have selected {{ sharedState.store.state.pie }}</h2>
+		<h1>Pie Master</h1>
 	</div>
 </template>
 
@@ -9,7 +8,7 @@
 import store from '../store';
 
 export default {
-  name: 'Selections',
+  name: 'PieMaster',
   data() {
     return {
       sharedState: {

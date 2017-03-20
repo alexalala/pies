@@ -17,7 +17,8 @@ body {
 }
 
 #app {
-  background-color: white;
+  background-color: honeydew;
+  box-shadow: 1px 1px 10px slategray;
   border-radius: 25px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,12 +37,27 @@ table, th, td {
 }
 
 img {
-  height: 100px;
+  height: 130px;
 }
 
-select,
-input,
-button {
-  padding: 0.8em;
+.user {
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+select {
+  width: 250px;
+  padding: 0.6em;
+  font-size: 1em;
+}
+
+button,
+input {
+  padding: 0.6em;
   font-size: 1em;
 }

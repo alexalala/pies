@@ -8,8 +8,9 @@
         <td><label for="pies">{{ pie.name }}</label></td>
       </tr>
     </table>
-    <p v-show="privateState.selection"> Oh you fancy {{ privateState.selection }} do you {{ sharedState.store.state.person }}?</p>
+    <p v-show="privateState.selection">Oh you fancy {{ privateState.selection }} do you {{ sharedState.store.state.person }}?</p>
     <br>
+    <button @click="back()">Back</button>
     <button @click="onSubmit()">Submit</button>
   </div>
 </template>
@@ -23,8 +24,6 @@ export default {
     return {
       privateState: {
         pies: [
-          { name: 'The Brekkie' },
-          { name: 'The Veggie' },
           { name: 'The Classic Aussie' },
           { name: 'The Match' },
           { name: 'The Aussie Deluxe' },
@@ -34,9 +33,8 @@ export default {
           { name: 'The Bondi' },
           { name: 'The Greek' },
           { name: 'The Italian' },
-          { name: 'Special' },
+          { name: 'Special - ask Karl what it is!' },
         ],
-        msg: 'Pie Selector',
         selection: false,
       },
       sharedState: {
@@ -45,6 +43,9 @@ export default {
     };
   },
   methods: {
+    back() {
+      this.$router.push('stickortwist');
+    },
     onSubmit() {
       this.sharedState.store.setPieSelection(this.$data.privateState.selection);
       this.$router.push('selections');
