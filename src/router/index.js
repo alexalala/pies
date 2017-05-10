@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import Vuex from 'vuex'
+
 import Pie from '@/components/Pie';
 import Landing from '@/components/Landing';
 import Selections from '@/components/Selections';
