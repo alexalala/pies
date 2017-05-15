@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>It's Decision Time, {{  }}...</h1>
+		<h1>It's Decision Time, {{ person }}...</h1>
 		<p>So here is where the really big decisions are made.</p>
 		<p>Your current choice of pie is <strong>{{  }}</strong>.</p>
 		<p>You will now have two options. Your selection here may change the course of your life forever so please make it wisely.</p>
@@ -12,6 +12,7 @@
 
 <script>
 import { store } from '../store';
+import { mapMutations } from 'vuex'
 
 export default {
 	name: 'stickortwist',
@@ -28,5 +29,10 @@ export default {
 			this.$router.push('pie');
 		},
 	},
+	computed: {
+		person() {
+			return this.$store.getters.selectedPerson;
+		},
+	}
 };
 </script>

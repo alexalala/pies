@@ -11,7 +11,7 @@ export const store = new Vuex.Store({
 		selectedPerson: PERSON_DEFAULT_VALUE,
 		selectedPie: PIE_DEFAULT_VALUE,
 		people: [
-			{ name: 'Alex', currentPie: '', image: '../assets/people/Alex.jpg' },
+			{ name: 'Alex', currentPie: 'poo', image: '../assets/people/Alex.jpg' },
 			{ name: 'Ant', currentPie: '', image: '../assets/people/Ant.png' },
 			{ name: 'Andy', currentPie: '', image: '../assets/people/Andy.jpg' },
 			{ name: 'Charlie', currentPie: '', image: '../assets/people/Charlie.jpg' },
@@ -41,12 +41,6 @@ export const store = new Vuex.Store({
 			{ name: 'The Italian' },
 			{ name: 'Special - ask Karl what it is!' },
         ],
-        setPersonSelection(person) {
-		    this.state.selectedPerson = person;
-		},
-		setPieSelection(pie) {
-		    this.state.selectedPie = pie;
-		},
 	},
 	getters: {
 		people: state => {
@@ -54,16 +48,14 @@ export const store = new Vuex.Store({
 		},
 		selectedPerson: state => {
 			return state.selectedPerson;
+		},
+		whichPersonThough: (state, people) => (person) => {
+			return state.people.find(people => people.name == person);
 		}
 	},
 	mutations: {
 		applyPersonSelection: (state, payload) => {
 			state.selectedPerson = payload;
-		}
+		},
 	},
-	actions: {
-		applyPersonSelection({commit}, payload) {
-			commit('applyPersonSelection', payload)
-		}
-	}
 });

@@ -10,6 +10,7 @@
 		<button @click="onDone()">
 			Next
 		</button>
+		<p>{{ whichPersonThough }}</p>
 	</div>
 </template>
 
@@ -28,26 +29,22 @@ export default {
 	},
 	methods: {
 		onDone() {
-			console.log(this.$store.getters.selectedPerson);
-			console.log(this.selected);
-			// now we are done we should redirect to the next step
 			this.$router.push('stickortwist');
 		},
 		updatePerson() {
 
 			this.$store.commit('applyPersonSelection', this.selected);
-		}
+		},
 	},
 	computed: {
-		people: {
-			get() {
-				return this.$store.getters.people;
-			}
+		people() {
+			return this.$store.getters.people;
 		},
-		personIsSelected: {
-			get() {
-				return this.$store.getters.selectedPerson;
-			}
+		personIsSelected() {
+			return this.$store.getters.selectedPerson;
+		},
+		whichPersonThough() {
+			return this.$store.getters.whichPersonThough(this.$store.getters.selectedPerson);
 		}
 	}
 };
