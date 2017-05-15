@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>It's Decision Time, {{ sharedState.store.state.person }}...</h1>
+		<h1>It's Decision Time, {{ store.state.person }}...</h1>
 		<p>So here is where the really big decisions are made.</p>
 		<p>Your current choice of pie is <strong>{{ sharedState.store.state.pie }}</strong>.</p>
 		<p>You will now have two options. Your selection here may change the course of your life forever so please make it wisely.</p>
@@ -11,26 +11,22 @@
 </template>
 
 <script>
-import store from '../store';
+import { store } from '../store';
 
 export default {
-  name: 'stickortwist',
-  data() {
-    return {
-      privateState: {
-      },
-      sharedState: {
-        store,
-      },
-    };
-  },
-  methods: {
-    stickIt() {
-      this.$router.push('selections');
-    },
-    twistIt() {
-      this.$router.push('pie');
-    },
-  },
+	name: 'stickortwist',
+	data() {
+		return {
+			store
+		}
+	},
+	methods: {
+		stickIt() {
+			this.$router.push('selections');
+		},
+		twistIt() {
+			this.$router.push('pie');
+		},
+	},
 };
 </script>

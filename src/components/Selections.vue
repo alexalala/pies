@@ -6,16 +6,16 @@
 </template>
 
 <script>
-import store from '../store';
+import { store } from '../store';
 
 export default {
-  name: 'Selections',
-  data() {
-    return {
-      sharedState: {
-        store,
-      },
-    };
-  },
+	name: 'Selections',
+	data() {
+		return {
+			sharedState: {
+			store,
+			},
+		};
+	},
 };
 </script>
