@@ -1,14 +1,14 @@
 <template>
 	<div class="pie">
-		<h1>Hello, {{ sharedState.store.state.person }}!</h1>
+		<h1>Hello, {{  }}!</h1>
 		<p>Which pie would you like?</p>
 		<table>
-			<tr v-for="pie in privateState.pies">
-				<td><input type="radio" :value="pie.name" name="pies" v-model="privateState.selection"></td>
+			<tr v-for="">
+				<td><input type="radio" :value="pie.name" name="pies" v-model="selection"></td>
 				<td><label for="pies">{{ pie.name }}</label></td>
 			</tr>
 		</table>
-		<p v-show="privateState.selection">Oh you fancy {{ privateState.selection }} do you {{ sharedState.store.state.person }}?</p>
+		<p v-show="selection">Oh you fancy {{  }} do you {{  }}?</p>
 		<br>
 		<button @click="back()">Back</button>
 		<button @click="onSubmit()">Submit</button>

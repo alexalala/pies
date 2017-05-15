@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<h1>It's Decision Time, {{ store.state.person }}...</h1>
+		<h1>It's Decision Time, {{  }}...</h1>
 		<p>So here is where the really big decisions are made.</p>
-		<p>Your current choice of pie is <strong>{{ sharedState.store.state.pie }}</strong>.</p>
+		<p>Your current choice of pie is <strong>{{  }}</strong>.</p>
 		<p>You will now have two options. Your selection here may change the course of your life forever so please make it wisely.</p>
 		<p>Would you like to stick with your previously selected pie? Or would you like to twist and change it for another?</p>
 		<button @click="stickIt()">stick</button>

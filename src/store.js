@@ -51,14 +51,19 @@ export const store = new Vuex.Store({
 	getters: {
 		people: state => {
 			return state.people;
+		},
+		selectedPerson: state => {
+			return state.selectedPerson;
 		}
 	},
 	mutations: {
-		applyPieSelection: (state, person) => {
-			var personObj =  state.people.filter(function(person) {
-				return store.getters.people == person;
-			})[0];
-			console.log(personObj);
+		applyPersonSelection: (state, payload) => {
+			state.selectedPerson = payload;
+		}
+	},
+	actions: {
+		applyPersonSelection({commit}, payload) {
+			commit('applyPersonSelection', payload)
 		}
 	}
 });

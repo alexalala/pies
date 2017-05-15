@@ -4,8 +4,8 @@
 
 		<p>Can I take your name please?</p>
 
-		<select>
-			<option :value="person.name" v-for="person in people" @input="updatePerson">{{ person.name }}</option>
+		<select v-model="selected" @change="updatePerson">
+			<option :value="person.name" v-for="person in people">{{ person.name }}</option>
 		</select>
 		<button @click="onDone()">
 			Next
@@ -22,36 +22,33 @@ export default {
 	data() {
 		return {
 			msg: 'Neontribe Pie Selector',
-			store
+			store,
+			selected: ''
 		}
 	},
 	methods: {
-		getSelectedUserPicture() {
-			const person = this.$data.privateState.selection;
-			return peopleImages[person] || peopleImages.default;
-		},
-		getCurrentPieSelection() {
-			const pieChoice = this.$data.privateState.selection;
-			return currentPie[pieChoice] || currentPie.default;
-		},
 		onDone() {
-			this.$store.commit('applyPieSelection');
+			console.log(this.$store.getters.selectedPerson);
+			console.log(this.selected);
 			// now we are done we should redirect to the next step
 			this.$router.push('stickortwist');
 		},
-		updatePerson(event) {
-			this.$store.dispatch('updatePerson', event.target.person.name);
+		updatePerson() {
+
+			this.$store.commit('applyPersonSelection', this.selected);
 		}
 	},
 	computed: {
 		people: {
 			get() {
 				return this.$store.getters.people;
-			},
-			set(person) {
-				this.$store.dispatch('updatePerson', person);
 			}
 		},
+		personIsSelected: {
+			get() {
+				return this.$store.getters.selectedPerson;
+			}
+		}
 	}
 };
 </script>

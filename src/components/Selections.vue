@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>Selections:</h1>
-		<h2>You have selected {{ sharedState.store.state.pie }}</h2>
+		<h2>You have selected {{  }}</h2>
 	</div>
 </template>
 
