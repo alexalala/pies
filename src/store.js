@@ -11,23 +11,23 @@ export const store = new Vuex.Store({
 		selectedPerson: PERSON_DEFAULT_VALUE,
 		selectedPie: PIE_DEFAULT_VALUE,
 		people: [
-			{ name: 'Alex', currentPie: 'poo', image: '../assets/people/Alex.jpg' },
-			{ name: 'Ant', currentPie: '', image: '../assets/people/Ant.png' },
-			{ name: 'Andy', currentPie: '', image: '../assets/people/Andy.jpg' },
-			{ name: 'Charlie', currentPie: '', image: '../assets/people/Charlie.jpg' },
-			{ name: 'George', currentPie: '', image: '../assets/people/George.jpg' },
-			{ name: 'Harry', currentPie: '', image: '../assets/people/Harry.jpg' },
-			{ name: 'Kara', currentPie: '', image: '../assets/people/Kara.jpg' },
-			{ name: 'Karl', currentPie: '', image: '../assets/people/Karl.jpg' },
-			{ name: 'Katja', currentPie: '', image: '../assets/people/Katja.png' },
-			{ name: 'Matt', currentPie: '', image: '../assets/people/Matt.jpg' },
-			{ name: 'Matthew', currentPie: '', image: '../assets/people/MattW.jpg' },
-			{ name: 'Neil', currentPie: '', image: '../assets/people/Neil.jpg' },
-			{ name: 'Ollie', currentPie: '', image: '../assets/people/Ollie.jpg' },
-			{ name: 'Rob', currentPie: '', image: '../assets/people/Rob.jpg' },
-			{ name: 'Rupert', currentPie: '', image: '../assets/people/Rupert.jpg' },
-			{ name: 'Steph', currentPie: '', image: '../assets/people/Steph.jpg' },
-			{ name: 'Toby', currentPie: '', image: '../assets/people/Toby.jpg' },
+			{ name: 'Alex', currentPie: 'poo' },
+			{ name: 'Ant', currentPie: '' },
+			{ name: 'Andy', currentPie: '' },
+			{ name: 'Charlie', currentPie: '' },
+			{ name: 'George', currentPie: '' },
+			{ name: 'Harry', currentPie: '' },
+			{ name: 'Kara', currentPie: '' },
+			{ name: 'Karl', currentPie: '' },
+			{ name: 'Katja', currentPie: '' },
+			{ name: 'Matt', currentPie: '' },
+			{ name: 'Matthew', currentPie: '' },
+			{ name: 'Neil', currentPie: '' },
+			{ name: 'Ollie', currentPie: '' },
+			{ name: 'Rob', currentPie: '' },
+			{ name: 'Rupert', currentPie: '' },
+			{ name: 'Steph', currentPie: '' },
+			{ name: 'Toby', currentPie: '' },
         ],
         pies: [
 			{ name: 'The Classic Aussie' },
@@ -49,11 +49,9 @@ export const store = new Vuex.Store({
 		selectedPerson: state => {
 			return state.selectedPerson;
 		},
-		// personsPie: (state, resultOfGetters) => {
-		// 	const piePerson = resultOfGetters.personObject(resultOfGetters.selectedPerson);
-
-		// 	return piePerson.currentPie;
-		// },
+		userPic: state => {
+			return state.selectedPerson.image;
+		}
 	},
 	mutations: {
 		applyPersonSelection: (state, name) => {
