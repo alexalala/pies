@@ -57,8 +57,6 @@ export const store = new Vuex.Store({
 		applyPersonSelection: (state, name) => {
 			const person = state.people.find(people => people.name === name)
 			state.selectedPerson = person;
-			console.log(person)
-
 		},
 		applyPieSelection: (state, person) => {
 			//find person object
