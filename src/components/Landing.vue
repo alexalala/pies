@@ -10,20 +10,20 @@
 		<button @click="onDone()">
 			Next
 		</button>
-		<p>{{ whichPersonThough }}</p>
+		<img class="user"
+		<p v-if="selected">Welcome {{ selected }}!</p>
 	</div>
 </template>
 
 <script>
 import { store } from '../store';
-import { mapState } from 'vuex';
+import { mapMutations } from 'vuex'
 
 export default {
 	name: 'landing',
 	data() {
 		return {
 			msg: 'Neontribe Pie Selector',
-			store,
 			selected: ''
 		}
 	},
@@ -32,9 +32,8 @@ export default {
 			this.$router.push('stickortwist');
 		},
 		updatePerson() {
-
 			this.$store.commit('applyPersonSelection', this.selected);
-		},
+		}
 	},
 	computed: {
 		people() {
@@ -43,8 +42,8 @@ export default {
 		personIsSelected() {
 			return this.$store.getters.selectedPerson;
 		},
-		whichPersonThough() {
-			return this.$store.getters.whichPersonThough(this.$store.getters.selectedPerson);
+		personsPie() {
+			return this.$store.getters.personsPie;
 		}
 	}
 };

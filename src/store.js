@@ -49,13 +49,25 @@ export const store = new Vuex.Store({
 		selectedPerson: state => {
 			return state.selectedPerson;
 		},
-		whichPersonThough: (state, people) => (person) => {
-			return state.people.find(people => people.name == person);
-		}
+		// personsPie: (state, resultOfGetters) => {
+		// 	const piePerson = resultOfGetters.personObject(resultOfGetters.selectedPerson);
+
+		// 	return piePerson.currentPie;
+		// },
 	},
 	mutations: {
-		applyPersonSelection: (state, payload) => {
-			state.selectedPerson = payload;
+		applyPersonSelection: (state, name) => {
+			const person = state.people.find(people => people.name === name)
+			state.selectedPerson = person;
+			console.log(person)
+
 		},
+		applyPieSelection: (state, person) => {
+			//find person object
+			const personObj = state.people.find(people => people.name === person);
+			const piePerson = resultOfGetters.personObject(resultOfGetters.selectedPerson);
+			return piePerson && piePerson.currentPie;
+		},
+
 	},
 });
