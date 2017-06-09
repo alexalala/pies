@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<h1>Selections:</h1>
-		<h2>You have selected {{ pie }}!</h2>
+		<p>You have selected {{ pie.name }} - {{ pie.desc }}</p>
+		<p>Sounds delicious!</p>
 	</div>
 </template>
 

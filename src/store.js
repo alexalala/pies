@@ -11,35 +11,35 @@ export const store = new Vuex.Store({
 		selectedPerson: PERSON_DEFAULT_VALUE,
 		selectedPie: PIE_DEFAULT_VALUE,
 		people: [
-			{ name: 'Alex', currentPie: 'poo' },
-			{ name: 'Ant', currentPie: '' },
-			{ name: 'Andy', currentPie: '' },
-			{ name: 'Charlie', currentPie: '' },
-			{ name: 'George', currentPie: '' },
-			{ name: 'Harry', currentPie: '' },
-			{ name: 'Kara', currentPie: '' },
-			{ name: 'Karl', currentPie: '' },
-			{ name: 'Katja', currentPie: '' },
-			{ name: 'Matt', currentPie: '' },
-			{ name: 'Matthew', currentPie: '' },
-			{ name: 'Neil', currentPie: '' },
-			{ name: 'Ollie', currentPie: '' },
-			{ name: 'Rob', currentPie: '' },
-			{ name: 'Rupert', currentPie: '' },
-			{ name: 'Steph', currentPie: '' },
-			{ name: 'Toby', currentPie: '' },
+			{ name: 'Alex', currentPie: 'poo', image: require('./assets/people/Alex.jpg') },
+			{ name: 'Ant', currentPie: '', image: require('./assets/people/Ant.png') },
+			{ name: 'Andy', currentPie: '', image: require('./assets/people/Andy.jpg') },
+			{ name: 'Charlie', currentPie: '', image: require('./assets/people/Charlie.jpg') },
+			{ name: 'George', currentPie: '', image: require('./assets/people/George.jpg') },
+			{ name: 'Harry', currentPie: '', image: require('./assets/people/Harry.jpg') },
+			{ name: 'Kara', currentPie: '', image: require('./assets/people/Kara.jpg') },
+			{ name: 'Karl', currentPie: '', image: require('./assets/people/Karl.jpg') },
+			{ name: 'Katja', currentPie: '', image: require('./assets/people/Katja.png') },
+			{ name: 'Matt', currentPie: '', image: require('./assets/people/Matt.jpg') },
+			{ name: 'Matthew', currentPie: '', image: require('./assets/people/MattW.jpg') },
+			{ name: 'Neil', currentPie: '', image: require('./assets/people/Neil.jpg') },
+			{ name: 'Ollie', currentPie: '', image: require('./assets/people/Ollie.jpg') },
+			{ name: 'Rob', currentPie: '', image: require('./assets/people/Rob.jpg') },
+			{ name: 'Rupert', currentPie: '', image: require('./assets/people/Rupert.jpg') },
+			{ name: 'Steph', currentPie: '', image: require('./assets/people/Steph.jpg') },
+			{ name: 'Toby', currentPie: '', image: require('./assets/people/Toby.jpg') },
         ],
         pies: [
-			{ name: 'The Classic Aussie' },
-			{ name: 'The Match' },
-			{ name: 'The Aussie Deluxe' },
-			{ name: 'The Pom' },
-			{ name: 'The Grill' },
-			{ name: 'The Flaming Galah' },
-			{ name: 'The Bondi' },
-			{ name: 'The Greek' },
-			{ name: 'The Italian' },
-			{ name: 'Special - ask Karl what it is!' },
+			{ name: 'The Classic Aussie', desc: 'lean beef mince, onion and gravy pie' },
+			{ name: 'The Match', desc: 'chunky beef, onion, stout and gravy pie' },
+			{ name: 'The Aussie Deluxe', desc: 'chunky beef, onion, bacon, gravy and cheese pie' },
+			{ name: 'The Pom', desc: 'creamy garlic and mushroom pie' },
+			{ name: 'The Grill', desc: 'thai chicken satay with peanut sauce pie' },
+			{ name: 'The Flaming Galah', desc: 'spicy beef panang curry pie (can you handle it?!)' },
+			{ name: 'The Bondi', desc: 'classic seafood chowder pie (salmon, cod, smoked haddock and king prawns' },
+			{ name: 'The Greek', desc: 'spinach with roasted red pepper, onion, garlic, black olive and feta pie (V)' },
+			{ name: 'The Italian', desc: 'caramelised balsamic red onion chutney, goats cheese, pine nuts and roasted vine tomato pie (V)' },
+			{ name: 'The Daily Special', desc: 'delicious pie. To find out what the flavour is, check out their twitter <a target="_blank" href="https://twitter.com/Flaming_Galahs">here</a> or ask Karl!' },
         ],
 	},
 	getters: {
@@ -54,7 +54,8 @@ export const store = new Vuex.Store({
 		},
 		selectedPie: state => {
 			return state.selectedPie;
-		}
+		},
+		selectedPersonImage: state => state.selectedPerson.image
 	},
 	mutations: {
 		applyPersonSelection: (state, name) => {
@@ -62,7 +63,8 @@ export const store = new Vuex.Store({
 			state.selectedPerson = person;
 		},
 		applyPieSelection: (state, pie) => {
-			state.selectedPie = pie;
+			const findPie = state.pies.find(pies => pies.name === pie)
+			state.selectedPie = findPie;
 		},
 
 	},
