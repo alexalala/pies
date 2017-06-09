@@ -49,8 +49,8 @@ export const store = new Vuex.Store({
 		selectedPerson: state => {
 			return state.selectedPerson;
 		},
-		userPic: state => {
-			return state.selectedPerson.image;
+		pies: state => {
+			return state.pies;
 		}
 	},
 	mutations: {
@@ -58,11 +58,8 @@ export const store = new Vuex.Store({
 			const person = state.people.find(people => people.name === name)
 			state.selectedPerson = person;
 		},
-		applyPieSelection: (state, person) => {
-			//find person object
-			const personObj = state.people.find(people => people.name === person);
-			const piePerson = resultOfGetters.personObject(resultOfGetters.selectedPerson);
-			return piePerson && piePerson.currentPie;
+		applyPieSelection: (state, pie) => {
+			state.selectedPie = pie;
 		},
 
 	},

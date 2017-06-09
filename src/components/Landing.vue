@@ -37,7 +37,7 @@ export default {
 			this.$router.push('stickortwist');
 		},
 		updatePerson() {
-			//finds the object of the selected person in the store and sets it to selected person var
+			//finds the object of the selected person in the people object and sets it to selected person in store
 			this.$store.commit('applyPersonSelection', this.selected);
 		}
 	},

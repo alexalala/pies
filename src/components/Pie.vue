@@ -1,32 +1,54 @@
 <template>
 	<div class="pie">
-		<h1>Hello, {{  }}!</h1>
+		<h1>Hello, {{ person.name }}!</h1>
 		<p>Which pie would you like?</p>
+
 		<table>
-			<tr v-for="">
-				<td><input type="radio" :value="pie.name" name="pies" v-model="selection"></td>
+			<tr v-for="pie in pies">
+				<td><input type="radio" :value="pie.name" name="pies" v-model="selected"></td>
 				<td><label for="pies">{{ pie.name }}</label></td>
 			</tr>
 		</table>
-		<p v-show="selection">Oh you fancy {{  }} do you {{  }}?</p>
-		<br>
+
+		<p v-show="selected">Oh you fancy {{ selected }} do you {{ person.name }}?</p>
+
 		<button @click="back()">Back</button>
 		<button @click="onSubmit()">Submit</button>
 	</div>
 </template>
 
 <script>
+import { store } from '../store';
 
 export default {
 	name: 'pie',
+	data() {
+		return {
+			//when pie is selected, it is set here
+			selected: ''
+		}
+	},
 	methods: {
 		back() {
+			//go back to previous page
 			this.$router.push('stickortwist');
 		},
 		onSubmit() {
-			this.sharedState.store.setPieSelection(this.$data.privateState.selection);
+			//applies selected pie to the store
+			this.$store.commit('applyPieSelection', this.selected);
+			//go through to selections page
 			this.$router.push('selections');
-		},
+		}
 	},
+	computed: {
+		person() {
+			//get selected person object
+			return this.$store.getters.selectedPerson;
+		},
+		pies() {
+			//get list of pies
+			return this.$store.getters.pies;
+		}
+	}
 };
 </script>
