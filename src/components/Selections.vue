@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>Selections:</h1>
-		<h2>You have selected {{  }}</h2>
+		<h2>You have selected {{ pie }}!</h2>
 	</div>
 </template>
 
@@ -10,12 +10,10 @@ import { store } from '../store';
 
 export default {
 	name: 'Selections',
-	data() {
-		return {
-			sharedState: {
-			store,
-			},
-		};
-	},
+	computed: {
+		pie() {
+			return this.$store.getters.selectedPie;
+		}
+	}
 };
 </script>

@@ -51,6 +51,9 @@ export const store = new Vuex.Store({
 		},
 		pies: state => {
 			return state.pies;
+		},
+		selectedPie: state => {
+			return state.selectedPie;
 		}
 	},
 	mutations: {
