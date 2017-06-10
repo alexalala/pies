@@ -5,16 +5,14 @@
 </template>
 
 <script>
-import store from '../store';
+import { store } from '../store';
 
 export default {
-  name: 'PieMaster',
-  data() {
-    return {
-      sharedState: {
-        store,
-      },
-    };
-  },
+	name: 'PieMaster',
+	data() {
+		return {
+			store,
+		};
+	},
 };
 </script>
