@@ -6,7 +6,7 @@
 		<table>
 			<tr v-for="pie in pies">
 				<td><input type="radio" :value="pie.name" name="pies" v-model="selected"></td>
-				<td><label for="pies">{{ pie.name }}</label></td>
+				<td><label for="pies"><strong>{{ pie.name }}</strong> - <span v-html="pie.desc"></span></label></td>
 			</tr>
 		</table>
 

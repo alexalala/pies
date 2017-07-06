@@ -11,8 +11,8 @@
 		<button @click="onDone()">
 			Next
 		</button>
-
-		<img class="user" v-if="selected" :src="'./src/assets/people/' + selected + '.jpg'">
+		<br>
+		<img class="user" v-if="selected" :src="personImage">
 		
 		<p v-if="selected">Welcome {{ selected }}!</p>
 	</div>
@@ -45,6 +45,9 @@ export default {
 		people() {
 			//gets array of people objects
 			return this.$store.getters.people;
+		},
+		personImage() {
+			return this.$store.getters.selectedPersonImage;
 		}
 	}
 };
