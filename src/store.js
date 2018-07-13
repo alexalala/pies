@@ -55,7 +55,9 @@ export const store = new Vuex.Store({
 		selectedPie: state => {
 			return state.selectedPie;
 		},
-		selectedPersonImage: state => state.selectedPerson.image
+		selectedPersonImage: state => {
+			return state.selectedPerson.image;
+		},
 	},
 	mutations: {
 		applyPersonSelection: (state, name) => {
