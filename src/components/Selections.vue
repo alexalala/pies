@@ -12,13 +12,6 @@ import { store } from '../store';
 
 export default {
 	name: 'Selections',
-	data(){
-		return {
-		}
-	},
-	methods:{
-
-	},
 	computed: {
 		pie() {
 			return this.$store.getters.selectedPie;
