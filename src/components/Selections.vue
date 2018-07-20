@@ -60,12 +60,6 @@ export default {
 			});
 
 			xhr.send('json='+(JSON.stringify(tempSelection)));
-
-			
-
-
-
-
 		},
 		changeSuccessText(newText){
 			this.successText = newText;
