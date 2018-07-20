@@ -1,6 +1,8 @@
 <template>
 	<div>
 		<h1>Pie Master</h1>
+		<p>You are the chosen one, the master of the pies. Here are the current selections: </p>
+		
 	</div>
 </template>
 
@@ -11,7 +13,7 @@ export default {
 	name: 'PieMaster',
 	data() {
 		return {
-			store,
+			
 		};
 	},
 };

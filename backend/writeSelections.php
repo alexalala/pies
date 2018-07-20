@@ -59,9 +59,11 @@
 
 
 		http_response_code(200);
+		exit();
 	} else {
 		error_log("error: JSON not posted");
 		// Send bad request response
 		http_response_code(400);
+		exit();
 	}
 ?>

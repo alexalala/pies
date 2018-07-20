@@ -58,6 +58,9 @@ export const store = new Vuex.Store({
 		selectedPersonImage: state => {
 			return state.selectedPerson.image;
 		},
+		serverURL: () => {
+			return "http://localhost:80";
+		}
 	},
 	mutations: {
 		applyPersonSelection: (state, name) => {
