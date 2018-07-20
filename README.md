@@ -1,14 +1,14 @@
-#Pies
+# Pies
 
 This is NeonTribe's pie picker, written in VueJS and PHP.
 
-##Installation
+## Installation
 
 Run `npm install` in the repo root directory, then `npm run dev` to start the front-end server.
 
 To start the backend server, run `sudo backend/server.sh`. Warning: this will install PHP if not already installed.
 
-##Configuration
+## Configuration
 
 To configure at which URL the front-end app should find the back end server, change the `serverURL` getter in `store.js`.
 
