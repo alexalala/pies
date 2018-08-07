@@ -11,7 +11,7 @@ export const store = new Vuex.Store({
 		selectedPerson: PERSON_DEFAULT_VALUE,
 		selectedPie: PIE_DEFAULT_VALUE,
 		people: [
-			{ name: 'Alex', currentPie: 'poo', image: require('./assets/people/Alex.jpg') },
+			{ name: 'Alex', currentPie: '', image: require('./assets/people/Alex.jpg') },
 			{ name: 'Ant', currentPie: '', image: require('./assets/people/Ant.png') },
 			{ name: 'Andy', currentPie: '', image: require('./assets/people/Andy.jpg') },
 			{ name: 'Charlie', currentPie: '', image: require('./assets/people/Charlie.jpg') },
@@ -58,6 +58,9 @@ export const store = new Vuex.Store({
 		selectedPersonImage: state => {
 			return state.selectedPerson.image;
 		},
+		serverURL: () => {
+			return "http://localhost:80/backend";
+		}
 	},
 	mutations: {
 		applyPersonSelection: (state, name) => {

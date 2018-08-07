@@ -10,7 +10,7 @@
 			</tr>
 		</table>
 
-		<p v-show="selected">Oh you fancy {{ selected }}, do you {{ person.name }}?</p>
+		<p v-show="selected">Oh you fancy <span class="highlighted">{{ selected }}</span>, do you {{ person.name }}?</p>
 		<p class="warningText" v-show="warningText">{{ warningText }}</p>
 
 		<button @click="back()">Back</button>
