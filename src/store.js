@@ -59,7 +59,7 @@ export const store = new Vuex.Store({
 			return state.selectedPerson.image;
 		},
 		serverURL: () => {
-			return "http://localhost:80";
+			return "http://localhost:80/backend";
 		}
 	},
 	mutations: {
