@@ -69,7 +69,7 @@ export const store = new Vuex.Store({
       {
         name: "Katja",
         currentPie: "",
-        image: require("./assets/people/Katja.png")
+        image: require("./assets/people/katja.jpg")
       },
       {
         name: "Matt",
@@ -89,7 +89,7 @@ export const store = new Vuex.Store({
       {
         name: "Ollie",
         currentPie: "",
-        image: require("./assets/people/Ollie.jpg")
+        image: require("./assets/people/ollie.jpg")
       },
       {
         name: "Rob",
@@ -104,7 +104,7 @@ export const store = new Vuex.Store({
       {
         name: "Rupert",
         currentPie: "",
-        image: require("./assets/people/Rupert.jpg")
+        image: require("./assets/people/rupert.png")
       },
       {
         name: "Steve",
