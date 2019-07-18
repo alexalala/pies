@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/pie2.png">
+    <img src="./assets/giphy-pie.gif" />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
+  name: "app"
 };
 </script>
 
 <style lang="scss">
-  @import "./assets/style.scss";
+@import "./assets/style.scss";
 </style>
