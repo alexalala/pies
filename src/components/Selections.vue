@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>Selections:</h1>
-		<p>You have selected <span class="highlighted">{{ pie.name }}</span> - <span v-html="pie.desc">{{ pie.desc }}</span></p>
+		<p>You have selected <span class="highlighted">{{ pie.name }}</span> - <span>{{ pie.desc }}</span></p>
 		<p>Sounds delicious!</p>
 		<button @click="back()">Go back!</button><button @click="saveSelections()">Save selection</button>
 		<p>{{ successText }}</p>
